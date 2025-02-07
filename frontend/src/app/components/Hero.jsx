@@ -8,7 +8,7 @@ const Hero = () => {
     <section
   className="pt-48 pb-32 relative overflow-hidden"
   style={{
-    backgroundImage: "url('bg3.jpg')",
+    backgroundImage: "url('bg4.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center"
   }}
