@@ -149,10 +149,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-- Project Lead: [Name]
-- Frontend Developer: [Name]
-- Backend Developer: [Name]
-- UI/UX Designer: [Name]
+- Project Lead: Namoune Saad Seif el islam
+- Frontend Developer: Mohammed + Sara + Saad
+- Backend Developer: Mohammed + Imen
+- UI/UX Designer: Mohammed + Saad
+- Logo Designer : Khadidja + Wassim
 
 ## 📞 Contact
 
