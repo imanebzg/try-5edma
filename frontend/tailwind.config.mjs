@@ -13,6 +13,7 @@ export default {
         "accent-blue-1": "#052863",
         "accent-blue-2": "#596986",
         "dark-text": "#06141F",
+        "light-text": "#F3F3F3",
         "neutral-1": "#F6F6F6",
         "neutral-2": "#F0F0F0",
         success: "#3CC313",
@@ -23,6 +24,10 @@ export default {
       fontFamily: {
         main: ["Roboto", "sans-serif"],
         secondary: ["Inter", "sans-serif"],
+      },
+      borderRadius: {
+        lg: "1rem",
+        md: "0.5rem",
       },
     },
   },

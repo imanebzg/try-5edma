@@ -7,6 +7,8 @@ import {
   Calendar,
   Star,
 } from "lucide-react";
+import aminaImage from "@/public/amina.png";
+import karimImage from "@/public/karim.png";
 const careers = [
   {
     icon: Stethoscope,
@@ -49,7 +51,7 @@ const testimonials = [
     career: "Médecine",
     quote:
       "Grâce à TryKhedma, j'ai pu suivre un chirurgien pendant 3 jours. Cette expérience a confirmé ma vocation!",
-    image: "amina.png",
+    image: aminaImage,
   },
   {
     name: "Karim M.",
@@ -57,7 +59,7 @@ const testimonials = [
     career: "Aviation",
     quote:
       "J'hésitais entre plusieurs métiers. Le stage avec un pilote m'a ouvert les yeux sur ma vraie passion.",
-    image: "karim.png",
+    image: karimImage,
   },
 ];
 

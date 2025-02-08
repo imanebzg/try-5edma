@@ -12,21 +12,26 @@ import {
 import * as data from "./_utils/landing-page-data.js";
 import Accordions from "./_components/Accordions.jsx";
 import Link from "next/link.js";
+import { auth } from "./_lib/auth.js";
+import Image from "next/image.js";
+import bg from "@/public/bg.png";
 
-export default function Home() {
+export default async function Home() {
+  // const session = { user: true };
+  const session = await auth();
   return (
     <>
       <div className={`bg-gradient-to-b from-blue-50 via-white to-blue-50 `}>
         {/* Hero Section with updated content */}
-        <section
-          className="pt-32 pb-20 relative overflow-hidden"
-          style={{
-            backgroundImage: "url('bg.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          id="hero"
-        >
+        <section className="pt-32 pb-20 relative overflow-hidden" id="hero">
+          <Image
+            src={bg}
+            alt="Background"
+            fill
+            className="object-cover" // Ensures it covers the div properly
+            quality={100}
+            placeholder="blur"
+          />
           <div className="inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_70%)]" />
 
           <div className="container mx-auto px-6 relative z-10">
@@ -45,19 +50,21 @@ export default function Home() {
                 ta voie avant de choisir tes études!
               </p>
 
-              <div className="flex flex-col md:flex-row justify-center gap-6">
-                <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-lg font-semibold hover:from-blue-700 hover:to-blue-900 transition transform hover:scale-105 shadow-lg flex items-center justify-center">
-                  <GraduationCap className="mr-2" />
-                  <Link href="/login">Espace Jeunes</Link>
-                  <ChevronRight className="ml-2 group-hover:translate-x-1 transition" />
-                </button>
+              {!session?.user ? (
+                <div className="flex flex-col md:flex-row justify-center gap-6">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full text-lg font-semibold hover:from-blue-700 hover:to-blue-900 transition transform hover:scale-105 shadow-lg flex items-center justify-center">
+                    <GraduationCap className="mr-2" />
+                    <Link href="/login">Espace Jeunes</Link>
+                    <ChevronRight className="ml-2 group-hover:translate-x-1 transition" />
+                  </button>
 
-                <button className="group px-8 py-4 bg-white text-blue-800 rounded-full text-lg font-semibold hover:bg-blue-50 transition shadow-lg flex items-center justify-center border-2 border-blue-200">
-                  <Building2 className="mr-2" />
-                  Espace Entreprises
-                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
-                </button>
-              </div>
+                  <button className="group px-8 py-4 bg-white text-blue-800 rounded-full text-lg font-semibold hover:bg-blue-50 transition shadow-lg flex items-center justify-center border-2 border-blue-200">
+                    <Building2 className="mr-2" />
+                    <Link href="/login/company">Espace Entreprises</Link>
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition" />
+                  </button>
+                </div>
+              ) : null}
             </div>
           </div>
         </section>
@@ -104,11 +111,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {data.testimonials.map((testimonial, index) => (
                 <div key={index} className="bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="flex items-center mb-6">
-                    <img
+                  <div className="flex gap-2 items-center mb-6">
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full mr-4 object-cover"
+                      width={64}
+                      height={64}
+                      className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
                       <h3 className="text-xl font-bold text-blue-900">

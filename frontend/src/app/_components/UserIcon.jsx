@@ -27,9 +27,12 @@ function UserIcon() {
       {hover && (
         <div
           onMouseLeave={handleMouseLeave}
-          className="absolute top-18 right-0 bg-white shadow-md flex flex-col gap-2 p-4 rounded-lg"
+          className="absolute top-12 self-center bg-white shadow-md flex flex-col gap-2 p-4 rounded-lg"
         >
-          <button className="underline" onClick={() => navigateTo("/profile")}>
+          <button
+            className="text-blue-800 hover:text-blue-600 font-medium transition w-max"
+            onClick={() => navigateTo("/profile")}
+          >
             Mon historique de candidatures
           </button>
           <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-neutral-300 to-transparent my-1"></div>

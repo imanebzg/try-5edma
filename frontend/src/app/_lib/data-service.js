@@ -1,3 +1,5 @@
+export const BACK_API = process.env.BACK_URL;
+
 export async function createUser(data) {
   //TODO: implement this function (this is ex)
   const response = await fetch("/api/user", {
