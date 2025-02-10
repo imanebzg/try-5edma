@@ -61,16 +61,18 @@ yarn dev
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+(It will be deployed soon)
+
 ## 🛠 Tech Stack
 
 - **Frontend**
-  - Next.js 13
+  - Next.js 14
   - React 18
   - Tailwind CSS
   - Lucide Icons
+  - React-Hook-Form
 
 - **Development**
-  - TypeScript
   - ESLint
   - Prettier
 
