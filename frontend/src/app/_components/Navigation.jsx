@@ -48,7 +48,7 @@ function Navigation({ session }) {
           Inscription
         </Link>
       ) : (
-        <AuthLinks />
+        <AuthLinks user={session.user} />
       )}
     </>
   );

@@ -7,7 +7,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="flex flex-col gap-10 mt-10 items-center">
-      <h2 className="text-3xl font-semibold font-main">
+      <h2 className="text-3xl max-md:text-xl max-md:text-center font-semibold font-main">
         Inscrivez-vous comme entreprise
       </h2>
       <form className="flex flex-col gap-2">

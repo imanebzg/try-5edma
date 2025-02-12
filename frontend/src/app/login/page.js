@@ -1,4 +1,3 @@
-import Category from "../_components/Category";
 import SignInButton from "../_components/SignInButton";
 
 export const metadata = {
@@ -8,7 +7,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="flex flex-col gap-10 mt-10 items-center">
-      <h2 className="text-3xl font-semibold">
+      <h2 className="text-3xl font-semibold max-md:text-xl max-md:text-center">
         Inscrivez-vous comme candidat ou employeur
       </h2>
       <SignInButton />

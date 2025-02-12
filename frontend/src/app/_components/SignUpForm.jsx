@@ -22,9 +22,12 @@ export default function SignUpForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 w-1/2 font-main text-base bg-light-text py-6 px-16 rounded-md"
+      className="flex flex-col gap-4 w-1/2 max-md:w-4/5 font-main text-base bg-light-text py-6 px-16 max-md:px-4 max-md:py-2 rounded-md"
     >
-      <label htmlFor="Nom de l'entreprise" className="text-xl font-semibold">
+      <label
+        htmlFor="Nom de l'entreprise"
+        className="text-xl max-md:text-lg font-semibold"
+      >
         Nom de l'entreprise
       </label>
       <input
@@ -32,14 +35,17 @@ export default function SignUpForm() {
           required: "Nom de l'entreprise est requis",
         })}
         type="text"
-        className="w-full border border-gray-300 rounded-md p-4"
+        className="w-full border border-gray-300 rounded-md p-4 max-md:p-2"
       />
       {errors?.companyName && (
         <span className="text-red-500 text-sm">
           {errors.companyName.message}
         </span>
       )}
-      <label htmlFor="Lien de l'entreprise" className="text-xl font-semibold">
+      <label
+        htmlFor="Lien de l'entreprise"
+        className="text-xl max-md:text-lg font-semibold"
+      >
         Lien de l'entreprise
       </label>
       <input
@@ -47,14 +53,14 @@ export default function SignUpForm() {
           required: "Lien de l'entreprise est requis",
         })}
         type="text"
-        className="w-full border border-gray-300 rounded-md p-4"
+        className="w-full border border-gray-300 rounded-md p-4 max-md:p-2"
       />
       {errors?.companyLink && (
         <span className="text-red-500 text-sm">
           {errors.companyLink.message}
         </span>
       )}
-      <label htmlFor="Email" className="text-xl font-semibold">
+      <label htmlFor="Email" className="text-xl max-md:text-lg font-semibold">
         Email
       </label>
       <input
@@ -66,12 +72,15 @@ export default function SignUpForm() {
           },
         })}
         type="email"
-        className="w-full border border-gray-300 rounded-md p-4 "
+        className="w-full border border-gray-300 rounded-md p-4 max-md:p-2 "
       />
       {errors?.email && (
         <span className="text-red-500 text-sm">{errors.email.message}</span>
       )}
-      <label htmlFor="Mot de passe" className="text-xl font-semibold">
+      <label
+        htmlFor="Mot de passe"
+        className="text-xl max-md:text-lg font-semibold"
+      >
         Mot de passe
       </label>
       <input
@@ -83,14 +92,14 @@ export default function SignUpForm() {
           },
         })}
         type="password"
-        className="w-full border border-gray-300 rounded-md p-4"
+        className="w-full border border-gray-300 rounded-md p-4 max-md:p-2"
       />
       {errors?.password && (
         <span className="text-red-500 text-sm">{errors.password.message}</span>
       )}
       <label
         htmlFor="Confirmer le mot de passe"
-        className="text-xl font-semibold"
+        className="text-xl max-md:text-lg font-semibold"
       >
         Confirmer le mot de passe
       </label>
@@ -102,7 +111,7 @@ export default function SignUpForm() {
             "Les mots de passe ne correspondent pas",
         })}
         type="password"
-        className="w-full border border-gray-300 rounded-md p-4"
+        className="w-full border border-gray-300 rounded-md p-4 max-md:p-2"
       />
       {errors?.confirmPassword && (
         <span className="text-red-500 text-sm">
